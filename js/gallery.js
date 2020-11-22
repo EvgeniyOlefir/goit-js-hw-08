@@ -35,3 +35,17 @@ function onImgClick(e) {
   addLightboxContent(currentImg);
   onOpenModal();
 }
+
+// функиция открытия модалки
+function onOpenModal() {
+  lightboxRef.classList.add("is-open");
+  document.addEventListener("keydown", onEscKeyPress);
+  document.addEventListener("keyup", imageArrowsFlipping);
+}
+
+// функция закрытия модалки
+function onCloseModal() {
+  lightboxRef.classList.remove("is-open");
+  document.removeEventListener("keydown", onEscKeyPress);
+  document.removeEventListener("keyup", imageArrowsFlipping);
+}
