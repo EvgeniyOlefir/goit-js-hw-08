@@ -22,3 +22,16 @@ function createGalleryItemsMarkup(items) {
     })
     .join("");
 }
+
+// функция фильтра кликов делегирования
+function onImgClick(e) {
+  if (e.target.nodeName !== "IMG") {
+    return;
+  }
+
+  currentImg = e.target;
+
+  e.preventDefault();
+  addLightboxContent(currentImg);
+  onOpenModal();
+}
